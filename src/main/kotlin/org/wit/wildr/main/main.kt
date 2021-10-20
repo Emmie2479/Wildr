@@ -1,11 +1,14 @@
 package org.wit.wildr.main
 
 import mu.KotlinLogging
+import org.wit.wildr.models.wildrmodel
 
 private val logger = KotlinLogging.logger {}
 
 var title = ""
 var description = ""
+
+var wildr = wildrmodel()
 
 fun main(args: Array<String>) {
     logger.info { "Initialising Wildr App" }
