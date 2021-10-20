@@ -1,11 +1,14 @@
-package org.wit.wildr
+package org.wit.wildr.main
 
 import mu.KotlinLogging
 
 private val logger = KotlinLogging.logger {}
 
+var title = ""
+var description = ""
+
 fun main(args: Array<String>) {
-    logger.info { "Launching Wildr App" }
+    logger.info { "Initialising Wildr App" }
     println("Wildr Kotlin App Version 1.0")
 
     var input: Int
@@ -16,12 +19,12 @@ fun main(args: Array<String>) {
             1 -> addPlacemark()
             2 -> updatePlacemark()
             3 -> listPlacemarks()
-            -1 -> println("Irish Wildlife App")
-            else -> println("Not an Option")
+            -1 -> println("Leaving Wildr")
+            else -> println("Not a valid Option")
         }
         println()
     } while (input != -1)
-    logger.info { "Shutting Down Wildr App" }
+    logger.info { "Exiting Wildr App" }
 }
 
 fun menu() : Int {
@@ -29,13 +32,13 @@ fun menu() : Int {
     var option : Int
     var input: String? = null
 
-    println("MAIN MENU")
-    println(" 1. Irish Species")
-    println(" 2. Carnivores")
-    println(" 3. Herbivores")
-    println("-1. Quit")
+    println("Home page")
+    println(" 1. Add Animal")
+    println(" 2. Update Animals")
+    println(" 3. List All the Animals")
+    println("-1. Leave")
     println()
-    print("Enter a number : ")
+    print("Enter your number choice: ")
     input = readLine()!!
     option = if (input.toIntOrNull() != null && !input.isEmpty())
         input.toInt()
@@ -45,13 +48,26 @@ fun menu() : Int {
 }
 
 fun addPlacemark(){
-    println("You Chose the animal")
+
+    println("Add an Animal")
+    println()
+    print("Enter your Animal : ")
+    title = readLine()!!
+    print("Give a Description of the Animal: ")
+    description = readLine()!!
+    println("You've entered [ $title ] for the animal and [ $description ] for the animals description")
 }
 
 fun updatePlacemark() {
-    println("Update the animals statistics")
+    println("Update Animal")
+    println()
+    print("Enter a new Animal for [ $title ] : ")
+    title = readLine()!!
+    print("Enter the new Description for [ $description ] : ")
+    description = readLine()!!
+    println("You have successfully updated [ $title ] for the animal and [ $description ] for the animals description")
 }
 
 fun listPlacemarks() {
-    println("List all the animals")
+    println("All Animals listed")
 }
