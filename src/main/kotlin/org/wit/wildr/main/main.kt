@@ -13,8 +13,10 @@ fun main(args: Array<String>) {
     do {
         input = menu()
         when(input) {
-            1 -> println("You pick the species type your looking for")
-            -1 -> println("Leaving Wildr")
+            1 -> addPlacemark()
+            2 -> updatePlacemark()
+            3 -> listPlacemarks()
+            -1 -> println("Irish Wildlife App")
             else -> println("Not an Option")
         }
         println()
@@ -27,15 +29,29 @@ fun menu() : Int {
     var option : Int
     var input: String? = null
 
-    println("Home")
-    println("Carnivores")
-    println("Herbivores")
-    println("Other species")
-    println("Return")
+    println("MAIN MENU")
+    println(" 1. Irish Species")
+    println(" 2. Carnivores")
+    println(" 3. Herbivores")
+    println("-1. Quit")
+    println()
+    print("Enter a number : ")
     input = readLine()!!
     option = if (input.toIntOrNull() != null && !input.isEmpty())
         input.toInt()
     else
         -9
     return option
+}
+
+fun addPlacemark(){
+    println("You Chose the animal")
+}
+
+fun updatePlacemark() {
+    println("Update the animals statistics")
+}
+
+fun listPlacemarks() {
+    println("List all the animals")
 }
