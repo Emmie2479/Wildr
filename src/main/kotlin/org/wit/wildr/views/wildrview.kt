@@ -1,6 +1,7 @@
-package org.wit.placemark.console.views
+package org.wit.wildr.views
 
 import org.wit.wildr.main.animals
+import org.wit.wildr.models.wildrJSONStore
 import org.wit.wildr.models.wildrMemStore
 import org.wit.wildr.models.wildrmodel
 
@@ -11,14 +12,14 @@ class wildrview {
         var option : Int
         var input: String?
 
-        println("MAIN MENU")
-        println(" 1. Add Placemark")
-        println(" 2. Update Placemark")
-        println(" 3. List All Placemarks")
-        println(" 4. Search Placemarks")
-        println("-1. Exit")
+        println("HOME")
+        println(" 1. Add Animal")
+        println(" 2. Update Animal")
+        println(" 3. List All Animals")
+        println(" 4. Search Animals")
+        println("-1. Quit")
         println()
-        print("Enter Option : ")
+        print("Enter Choice : ")
         input = readLine()!!
         option = if (input.toIntOrNull() != null && !input.isEmpty())
             input.toInt()
@@ -27,8 +28,8 @@ class wildrview {
         return option
     }
 
-    fun listAnimals(animals : wildrMemStore) {
-        println("List All Placemarks")
+    fun listAnimals(animals : wildrJSONStore) {
+        println("List All Animals")
         println()
         animals.logAll()
         println()
@@ -36,9 +37,9 @@ class wildrview {
 
     fun showAnimal(animal : wildrmodel) {
         if(animal != null)
-            println("Placemark Details [ $animal ]")
+            println("Animal Details [ $animal ]")
         else
-            println("Placemark Not Found...")
+            println("Animal Not Found...")
     }
 
     fun addAnimalData(animal : wildrmodel) : Boolean {

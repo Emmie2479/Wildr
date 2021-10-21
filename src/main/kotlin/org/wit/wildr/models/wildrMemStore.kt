@@ -35,7 +35,9 @@ class wildrMemStore : wildrstore {
             foundAnimal.description = animal.description
         }
     }
-
+    override fun delete(animal: wildrmodel) {
+        animals.remove(animal)
+    }
     internal fun logAll() {
         animals.forEach { logger.info("${it}") }
     }

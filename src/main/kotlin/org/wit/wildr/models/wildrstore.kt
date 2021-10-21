@@ -5,4 +5,5 @@ interface wildrstore {
     fun findOne(id: Long): wildrmodel?
     fun create(animal: wildrmodel)
     fun update(animal: wildrmodel)
+    fun delete(animal: wildrmodel)
 }
