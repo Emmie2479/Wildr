@@ -9,7 +9,7 @@ internal fun getId(): Long {
     return lastId++
 }
 
-class AnimalMemStore : wildrstore {
+class wildrMemStore : wildrstore {
 
     val animals = ArrayList<wildrmodel>()
 
@@ -39,4 +39,4 @@ class AnimalMemStore : wildrstore {
     internal fun logAll() {
         animals.forEach { logger.info("${it}") }
     }
-}   var description: String = "")
+}
